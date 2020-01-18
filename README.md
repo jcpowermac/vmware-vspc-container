@@ -1,6 +1,8 @@
 # vmware-vspc-container
 OpenStack's VMware Virtual Serial Port Concentrator container
 
+[![Docker Repository on Quay](https://quay.io/repository/jcallen/vmware-vspc/status "Docker Repository on Quay")](https://quay.io/repository/jcallen/vmware-vspc)
+
 ## Prerequisites
 
 - podman (why would you use anything else)

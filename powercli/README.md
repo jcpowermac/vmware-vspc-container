@@ -1,3 +1,5 @@
+[![Docker Repository on Quay](https://quay.io/repository/jcallen/vmware-vspc-powercli/status "Docker Repository on Quay")](https://quay.io/repository/jcallen/vmware-vspc-powercli)
+
 ## PowerCLI scripts
 
 Review each script before execution.  They are simple
