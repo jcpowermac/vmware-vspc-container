@@ -7,7 +7,9 @@ OpenStack's VMware Virtual Serial Port Concentrator container
 
 ## Setup
 
-VMware Documentation: https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-C6FBCF66-5796-4EE6-BF47-4DCAA9DCD1E3.html
+VMware Documentation:
+
+https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-C6FBCF66-5796-4EE6-BF47-4DCAA9DCD1E3.html
 
 ### ESXi Firewall
 
@@ -24,7 +26,6 @@ VMware Documentation: https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.v
 Use `./run.sh` to build, destroy and start container
 
 ## TODO
-- Add _something_ to configure virtual machines and hosts
 - Use certificates
 - Replace `run.sh` with Kubernetes pod
 
