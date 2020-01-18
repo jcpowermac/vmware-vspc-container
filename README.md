@@ -17,12 +17,13 @@ VMware Documentation: https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.v
 ### Virtual Machine
 
 - Right click on virtual machine -> "Edit Settings..." -> Add New Device (serial)
-...Use Network
-...Direction: Server
-...Port URI: vmware-vspc
-...Use Virtual Serial Port Concentrator
-...vSPC URI: telnet://container_host_ip_address:13370
-...I/O Mode: enabled
+
+   Use Network
+   Direction: Server
+   Port URI: vmware-vspc
+   Use Virtual Serial Port Concentrator
+   vSPC URI: telnet://container_host_ip_address:13370
+   I/O Mode: enabled
 
 ### Container
 Use `./run.sh` to build, destroy and start container
