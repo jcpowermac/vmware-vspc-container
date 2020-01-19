@@ -15,14 +15,28 @@ https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GU
 
 ### ESXi Firewall
 
+#### Manual
 - Click on host -> Configure -> Firewall -> Edit...
   Enable "VM serial port over network" and "VM serial port connected to vSPC"
 
+#### Scripted
+See `./powercli/configure-host-firewall.ps1`
+
 ### Virtual Machine
 
+#### Manual
 - Right click on virtual machine -> "Edit Settings..." -> Add New Device (serial)
 
-   Use Network, Direction: Server, Port URI: vmware-vspc, Use Virtual Serial Port Concentrator, vSPC URI: telnet://container_host_ip_address:13370, I/O Mode: enabled
+
+- Use Network
+- Direction: Server
+- Port URI: vmware-vspc
+- Use Virtual Serial Port Concentrator
+- vSPC URI: telnet://container_host_ip_address:13370
+- I/O Mode: enabled
+
+#### Scripted
+See `./powercli/configure-vm-serial-device.ps1`
 
 ### Container
 Use `./run.sh` to build, destroy and start container
