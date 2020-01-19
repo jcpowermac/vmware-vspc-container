@@ -5,7 +5,7 @@ OpenStack's VMware Virtual Serial Port Concentrator container
 
 ## Prerequisites
 
-- podman (why would you use anything else)
+- Container runtime (tested with podman)
 
 ## Setup
 
@@ -43,5 +43,4 @@ Use `./run.sh` to build, destroy and start container
 
 ## TODO
 - Use certificates
-- Replace `run.sh` with Kubernetes pod
 

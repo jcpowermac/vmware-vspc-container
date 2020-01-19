@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: vmware-vspc-powercli
+  name: vmware-vspc-powercli
+spec:
+  containers:
+  - command:
+    - tail
+    - -f
+    - /dev/null
+    env:
+    - name: PATH
+      value: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    - name: TERM
+      value: xterm
+    - name: container
+      value: podman
+    - name: LC_ALL
+      value: en_US.UTF-8
+    - name: LANG
+      value: en_US.UTF-8
+    - name: PSModuleAnalysisCachePath
+      value: /var/cache/microsoft/powershell/PSModuleAnalysisCache/ModuleAnalysisCache
+    - name: DOTNET_SYSTEM_GLOBALIZATION_INVARIANT
+      value: "false"
+    - name: HOSTNAME
+    image: quay.io/jcallen/vmware-vspc-powercli:latest
+    name: vmware-vspc-powercli
+    resources: {}
+    securityContext:
+      allowPrivilegeEscalation: true
+      capabilities: {}
+      privileged: false
+      readOnlyRootFilesystem: false
+    stdin: true
+    tty: true
+    workingDir: /
+status: {}
+

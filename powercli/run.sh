@@ -1,8 +1,11 @@
 #!/bin/bash
 
-IMAGE=powercli
+IMAGE=quay.io/jcallen/vmware-vspc-powercli
+NAME=vmware-vspc-powercli
 
-podman build -t ${IMAGE} -f Dockerfile .
-podman rm -f ${IMAGE}
+#podman build -t ${IMAGE} -f Dockerfile .
+podman rm -f ${NAME}
 
-podman run -it --rm --name ${IMAGE} ${IMAGE}
+podman run -d --rm --name ${NAME} ${IMAGE}
+
+podman exec -it --name ${NAME} pwsh
