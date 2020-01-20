@@ -1,0 +1,43 @@
+---
+variant: fcos
+version: 1.0.0
+passwd:
+  users:
+  - name: core
+    password_hash: $6$vCzvDv4KqESoIWoC$VzSDagivG0.QhULhbMhW1r25XlucHfalRJq7nWF3p2.HQ/UqM0S0ClbwtnVEDDLv5Daa5UUm4PDqoGa0sLZOm1
+systemd:
+  units:
+  - name: vmware-vspc-powercli.service
+    enabled: true
+    contents: |
+      [Unit]
+      Description=vmware-vspc-powercli
+      After=network-online.target
+      Wants=network-online.target
+
+      [Service]
+      TimeoutStartSec=0
+      ExecStartPre=-/bin/podman kill vmware-vspc-powercli
+      ExecStartPre=-/bin/podman rm  vmware-vspc-powercli
+      ExecStartPre=/bin/podman pull quay.io/jcallen/vmware-vspc-powercli
+      ExecStart=/bin/podman run --name vmware-vspc-powercli quay.io/jcallen/vmware-vspc-powercli
+
+      [Install]
+      WantedBy=multi-user.target
+  - name: vmware-vspc.service
+    enabled: true
+    contents: |
+      [Unit]
+      Description=vmware-vspc
+      After=network-online.target
+      Wants=network-online.target
+
+      [Service]
+      TimeoutStartSec=0
+      ExecStartPre=-/bin/podman kill vmware-vspc
+      ExecStartPre=-/bin/podman rm  vmware-vspc
+      ExecStartPre=/bin/podman pull quay.io/jcallen/vmware-vspc
+      ExecStart=/bin/podman run --net=host --name vmware-vspc quay.io/jcallen/vmware-vspc
+
+      [Install]
+      WantedBy=multi-user.target
